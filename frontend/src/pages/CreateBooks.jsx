@@ -7,7 +7,7 @@ import { useSnackbar } from 'notistack';
 
 const CreateBooks = () => {
   const [eindat, setEindat] = useState('');
-  const [author, setAuthor] = useState('');
+  const [autor, setAuthor] = useState('');
   const [keyw, setKeyw] = useState('');
   const [kwp, setKwp] = useState('');
   const [verl, setVerl] = useState('');
@@ -22,11 +22,14 @@ const CreateBooks = () => {
   const handleSaveBook = () => {
     const data = {
       eindat,
-      author,
+      autor,
       keyw,
       kwp,
       verl,
       seit,
+      pos,
+      farbe,
+      zahl,
 
     };
     setLoading(true);
@@ -65,7 +68,7 @@ const CreateBooks = () => {
           <label className='text-xl mr-4 text-gray-500'>Autor</label>
           <input
             type='string'
-            value={author}
+            value={autor}
             onChange={(e) => setAuthor(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full'
 
@@ -102,14 +105,39 @@ const CreateBooks = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Seiten</label>
+                  <label className='text-xl mr-4 text-gray-500'>Seiten</label>
+                  <input
+                    type='number'
+                    value={seit}
+                    onChange={(e) => setSeit(e.target.value)}
+                    className='border-2 border-gray-500 px-4 py-2  w-full '
+                  />
+                </div><div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Position</label>
+          <input
+            type='text'
+            value={pos}
+            onChange={(e) => setPos(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div> <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Farbe</label>
+          <input
+            type='text'
+            value={farbe}
+            onChange={(e) => setFarbe(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div> <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Zahl</label>
           <input
             type='number'
-            value={seit}
-            onChange={(e) => setSeit(e.target.value)}
+            value={zahl}
+            onChange={(e) => setZahl(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
+
         <button className='p-2 bg-sky-300 m-8' onClick={handleSaveBook}>
           Save
         </button>

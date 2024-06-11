@@ -8,7 +8,7 @@ router.post('/', async (request, response) => {
   try {
     if (
       !request.body.eindat ||
-      !request.body.author ||
+      !request.body.autor ||
       !request.body.keyw ||
       !request.body.kwp ||
       !request.body.verl ||
@@ -24,7 +24,7 @@ router.post('/', async (request, response) => {
     }
     const newBook = {
       eindat: request.body.eindat,
-      author: request.body.author,
+      autor: request.body.autor,
       keyw: request.body.keyw,
       kwp: request.body.kwp,
       verl: request.body.verl,
@@ -77,7 +77,7 @@ router.put('/:id', async (request, response) => {
   try {
     if (
       !request.body.eindat ||
-      !request.body.author ||
+      !request.body.autor ||
       !request.body.keyw ||
       !request.body.kwp ||
       !request.body.verl ||
