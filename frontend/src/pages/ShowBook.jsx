@@ -37,7 +37,7 @@ const ShowBook = () => {
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Title</span>
-            <span>{book.title}</span>
+            <span>{book.eindat}</span>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Author</span>

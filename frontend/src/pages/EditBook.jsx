@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
 const EditBook = () => {
-  const [title, setTitle] = useState('');
+  const [eindat, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishYear, setPublishYear] = useState('');
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,7 @@ const EditBook = () => {
     .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear)
-        setTitle(response.data.title)
+        setTitle(response.data.eindat)
         setLoading(false);
       }).catch((error) => {
         setLoading(false);
@@ -31,7 +31,7 @@ const EditBook = () => {
   
   const handleEditBook = () => {
     const data = {
-      title,
+      eindat,
       author,
       publishYear,
     };
@@ -61,7 +61,7 @@ const EditBook = () => {
           <label className='text-xl mr-4 text-gray-500'>Title</label>
           <input
             type='text'
-            value={title}
+            value={eindat}
             onChange={(e) => setTitle(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full'
           />
