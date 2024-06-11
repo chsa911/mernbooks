@@ -40,12 +40,12 @@ const ShowBook = () => {
             <span>{book.eindat}</span>
           </div>
           <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-500'>Author</span>
+            <span className='text-xl mr-4 text-gray-500'>Autor</span>
             <span>{book.author}</span>
           </div>
           <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-500'>Publish Year</span>
-            <span>{book.publishYear}</span>
+            <span className='text-xl mr-4 text-gray-500'>Keyword</span>
+            <span>{book.keyw}</span>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Create Time</span>

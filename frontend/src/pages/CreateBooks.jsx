@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
 const CreateBooks = () => {
-  const [eindat, setTitle] = useState('');
+  const [eindat, setEindat] = useState('');
   const [author, setAuthor] = useState('');
-  const [publishYear, setPublishYear] = useState('');
+  const [keyw, setKeyw] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -17,7 +17,7 @@ const CreateBooks = () => {
     const data = {
       eindat,
       author,
-      publishYear,
+      keyw,
     };
     setLoading(true);
     axios
@@ -46,7 +46,7 @@ const CreateBooks = () => {
           <input
             type='date'
             value={eindat}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setEindat(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full'
 
           />
@@ -64,8 +64,8 @@ const CreateBooks = () => {
           <label className='text-xl mr-4 text-gray-500'>Keyword</label>
           <input
             type='text'
-            value={publishYear}
-            onChange={(e) => setPublishYear(e.target.value)}
+            value={keyw}
+            onChange={(e) => setKeyw(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
