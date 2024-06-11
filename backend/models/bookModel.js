@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const bookSchema = mongoose.Schema(
   {
     eindat: {
-      type: String,
+      type: Date,
       required: false,
     },
     author: {
@@ -14,6 +14,31 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: false,
     },
+  kwp: {
+        type: Number,
+        required: false,
+      },
+   verl: {
+          type: String,
+          required: false,
+        },
+   seit: {
+          type: Number,
+          required: false,
+        },
+pos: {
+          type: String,
+          required: false,
+        },
+farbe: {
+          type: String,
+          required: false,
+        },
+zahl: {
+          type: Number,
+          required: false,
+        },
+
   },
   {
     timestamps: true,

@@ -13,8 +13,17 @@ const BooksTable = ({ books }) => {
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Autor
           </th>
-          <th className='border border-slate-600 rounded-md max-md:hidden'>
+         <th className='border border-slate-600 rounded-md max-md:hidden'>
             Keyword
+          </th><th className='border border-slate-600 rounded-md max-md:hidden'>
+            Keywordposition
+          </th><th className='border border-slate-600 rounded-md max-md:hidden'>
+            Verlag
+          </th><th className='border border-slate-600 rounded-md max-md:hidden'>
+            Seiten
+          </th>
+          <th className='border border-slate-600 rounded-md max-md:hidden'>
+            Strichcode
           </th>
           <th className='border border-slate-600 rounded-md'>Operations</th>
         </tr>
@@ -33,6 +42,12 @@ const BooksTable = ({ books }) => {
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
               {book.keyw}
+            </td><td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+              {book.kwp}
+            </td><td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+              {book.verl}
+            </td><td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+              {book.seit}
             </td>
             <td className='border border-slate-700 rounded-md text-center'>
               <div className='flex justify-center gap-x-4'>

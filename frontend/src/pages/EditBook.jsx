@@ -9,6 +9,12 @@ const EditBook = () => {
   const [eindat, setEindat] = useState('');
   const [author, setAuthor] = useState('');
   const [keyw, setKeyw] = useState('');
+  const [kwp, setKwp] = useState('');
+  const [verl, setVerl] = useState('');
+  const [seit, setSeit] = useState('');
+  const [pos, setPos] = useState('');
+  const [farbe, setFarbe] = useState('');
+  const [zahl, setZahl] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {id} = useParams();
@@ -18,9 +24,13 @@ const EditBook = () => {
     setLoading(true);
     axios.get(`http://localhost:5555/books/${id}`)
     .then((response) => {
-        setAuthor(response.data.author);
-        setKeyw(response.data.keyw)
         setEindat(response.data.eindat)
+        setAuthor(response.data.author)
+        setKeyw(response.data.keyw)
+        setKeyw(response.data.kwp)
+        setKeyw(response.data.verl)
+        setKeyw(response.data.seit)
+
         setLoading(false);
       }).catch((error) => {
         setLoading(false);
@@ -81,6 +91,31 @@ const EditBook = () => {
             type='text'
             value={keyw}
             onChange={(e) => setKeyw(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div><div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Keywordposition</label>
+          <input
+            type='number'
+            value={kwp}
+            onChange={(e) => setKwp(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div><div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Verlag</label>
+          <input
+            type='text'
+            value={verl}
+            onChange={(e) => setVerl(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div>
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Seiten</label>
+          <input
+            type='number'
+            value={verl}
+            onChange={(e) => setSeit(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>

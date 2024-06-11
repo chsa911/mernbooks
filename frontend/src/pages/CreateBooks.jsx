@@ -9,6 +9,12 @@ const CreateBooks = () => {
   const [eindat, setEindat] = useState('');
   const [author, setAuthor] = useState('');
   const [keyw, setKeyw] = useState('');
+  const [kwp, setKwp] = useState('');
+  const [verl, setVerl] = useState('');
+  const [seit, setSeit] = useState('');
+  const [pos, setPos] = useState('');
+  const [farbe, setFarbe] = useState('');
+  const [zahl, setZahl] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -18,6 +24,10 @@ const CreateBooks = () => {
       eindat,
       author,
       keyw,
+      kwp,
+      verl,
+      seit,
+
     };
     setLoading(true);
     axios
@@ -51,25 +61,55 @@ const CreateBooks = () => {
 
           />
         </div>
-        <div className='my-4'>
+   <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Autor</label>
           <input
-            type='text'
+            type='string'
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2 w-full'
+
+          />
+        </div>
+
+   <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Keyword</label>
+          <input
+            type='string'
+            value={keyw}
+            onChange={(e) => setKeyw(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2 w-full'
+
+          />
+        </div>
+
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Keywordpostion</label>
+          <input
+            type='number'
+            value={kwp}
+            onChange={(e) => setKwp(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Keyword</label>
+          <label className='text-xl mr-4 text-gray-500'>Verlag</label>
           <input
             type='text'
-            value={keyw}
-            onChange={(e) => setKeyw(e.target.value)}
+            value={verl}
+            onChange={(e) => setVerl(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
-        
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Seiten</label>
+          <input
+            type='number'
+            value={seit}
+            onChange={(e) => setSeit(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div>
         <button className='p-2 bg-sky-300 m-8' onClick={handleSaveBook}>
           Save
         </button>

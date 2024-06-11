@@ -9,16 +9,29 @@ router.post('/', async (request, response) => {
     if (
       !request.body.eindat ||
       !request.body.author ||
-      !request.body.keyw
+      !request.body.keyw ||
+      !request.body.kwp ||
+      !request.body.verl ||
+      !request.body.seit ||
+      !request.body.pos ||
+      !request.body.farbe  ||
+      !request.body.zahl
+
     ) {
       return response.status(400).send({
-        message: 'Send all required fields: eingabedatum, autor, Verlag',
+        message: 'Send all required fields: eingabedatum , autor, keyword, keywordposition, verlag, seiten'
       });
     }
     const newBook = {
       eindat: request.body.eindat,
       author: request.body.author,
       keyw: request.body.keyw,
+      kwp: request.body.kwp,
+      verl: request.body.verl,
+      seit: request.body.seit,
+      pos: request.body.pos,
+      farbe: request.body.farbe,
+      zahl: request.body.zahl,
     };
 
     const book = await Book.create(newBook);
@@ -65,11 +78,18 @@ router.put('/:id', async (request, response) => {
     if (
       !request.body.eindat ||
       !request.body.author ||
-      !request.body.keyw
+      !request.body.keyw ||
+      !request.body.kwp ||
+      !request.body.verl ||
+      !request.body.seit ||
+      !request.body.pos ||
+      !request.body.farbe ||
+      !request.body.zahl
+
     ) {
       return response.status(400).send({
-        message: 'Send all required fields: eindat, author, keyw',
-      });
+        message: 'Send all required fields: eingabedatum, autor, keyword, keywordposition, verlag, seiten '
+              });
     }
 
     const { id } = request.params;

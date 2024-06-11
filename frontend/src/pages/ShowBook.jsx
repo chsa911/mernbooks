@@ -36,16 +36,25 @@ const ShowBook = () => {
             <span>{book._id}</span>
           </div>
           <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-500'>Title</span>
+            <span className='text-xl mr-4 text-gray-500'>Eingabedatum</span>
             <span>{book.eindat}</span>
           </div>
           <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-500'>Autor</span>
+            <span className='text-xl mr-4 text-gray-500'>Author</span>
             <span>{book.author}</span>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Keyword</span>
             <span>{book.keyw}</span>
+          </div><div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Keywordposition</span>
+            <span>{book.kwp}</span>
+          </div><div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Verlag</span>
+            <span>{book.verl}</span>
+          </div><div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Seiten</span>
+            <span>{book.seit}</span>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Create Time</span>
