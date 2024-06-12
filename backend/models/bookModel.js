@@ -4,39 +4,39 @@ const bookSchema = mongoose.Schema(
   {
     eindat: {
       type: Date,
-      required: false,
+      required: true,
     },
     autor: {
       type: String,
-      required: false,
+      required: true,
     },
     keyw: {
       type: String,
-      required: false,
+      required: true,
     },
   kwp: {
         type: Number,
-        required: false,
+        required: true,
       },
    verl: {
           type: String,
-          required: false,
+          required: true,
         },
    seit: {
           type: Number,
-          required: false,
+          required: true,
         },
 pos: {
           type: String,
-          required: false,
+          required: true,
         },
 farbe: {
           type: String,
-          required: false,
+          required: true,
         },
 zahl: {
           type: Number,
-          required: false,
+          required: true,
         },
 
   },

@@ -2,7 +2,7 @@ import express from 'express';
 import { Book } from '../models/bookModel.js';
 
 const router = express.Router();
-
+//dask10
 // Route for Save a new Book
 router.post('/', async (request, response) => {
   try {
@@ -22,6 +22,7 @@ router.post('/', async (request, response) => {
         message: 'Send all required fields: eingabedatum , autor, keyword, keywordposition, verlag, seiten'
       });
     }
+    //dask10
     const newBook = {
       eindat: request.body.eindat,
       autor: request.body.autor,
@@ -71,7 +72,7 @@ router.get('/:id', async (request, response) => {
     response.status(500).send({ message: error.message });
   }
 });
-
+//dask10
 // Route for Update a Book
 router.put('/:id', async (request, response) => {
   try {

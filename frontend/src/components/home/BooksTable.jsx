@@ -9,6 +9,7 @@ const BooksTable = ({ books }) => {
       <thead>
         <tr>
           <th className='border border-slate-600 rounded-md'>No</th>
+   //dask10
           <th className='border border-slate-600 rounded-md'>Eingabedatum</th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Autor
@@ -43,7 +44,8 @@ const BooksTable = ({ books }) => {
             <td className='border border-slate-700 rounded-md text-center'>
               {index + 1}
             </td>
-            <td className='border border-slate-700 rounded-md text-center'>
+  //dask10
+              <td className='border border-slate-700 rounded-md text-center'>
               {book.eindat}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>

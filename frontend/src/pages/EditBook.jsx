@@ -4,7 +4,7 @@ import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-
+//dask10
 const EditBook = () => {
   const [eindat, setEindat] = useState('');
   const [autor, setAuthor] = useState('');
@@ -19,11 +19,12 @@ const EditBook = () => {
   const navigate = useNavigate();
   const {id} = useParams();
   const { enqueueSnackbar } = useSnackbar();
-
+//dask10
   useEffect(() => {
     setLoading(true);
     axios.get(`http://localhost:5555/books/${id}`)
     .then((response) => {
+        //dask10
         setEindat(response.data.eindat)
         setAuthor(response.data.autor)
         setKeyw(response.data.keyw)
@@ -43,6 +44,7 @@ const EditBook = () => {
   }, [])
   
   const handleEditBook = () => {
+    //dask10
     const data = {
       eindat,
       autor,
