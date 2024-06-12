@@ -1,10 +1,17 @@
-import { Link } from 'react-router-dom';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
+import { FaSearch } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+
 
 const BooksTable = ({ books }) => {
+
+
   return (
+
     <table className='w-full border-separate border-spacing-2'>
       <thead>
         <tr>
@@ -91,5 +98,4 @@ const BooksTable = ({ books }) => {
     </table>
   );
 };
-
 export default BooksTable;
