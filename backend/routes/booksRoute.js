@@ -58,6 +58,20 @@ router.get('/', async (request, response) => {
     response.status(500).send({ message: error.message });
   }
 });
+// Route to get one book after pos, farbe and zahl
+router.get('/:pos', async (request, response) => {
+  try {
+    const { pos } = request.params;
+
+    const book = await Book.findByPos(pos);
+
+    return response.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
 
 // Route for Get One Book from database by id
 router.get('/:id', async (request, response) => {
