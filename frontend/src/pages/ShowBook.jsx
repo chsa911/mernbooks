@@ -34,7 +34,7 @@ const ShowBook = () => {
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Id</span>
             <span>{book._id}</span>
-   //dask10
+   {/*dask10*/}
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Eingabedatum</span>

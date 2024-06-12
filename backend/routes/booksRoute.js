@@ -58,7 +58,21 @@ router.get('/', async (request, response) => {
     response.status(500).send({ message: error.message });
   }
 });
-// Route to get one book after pos, farbe and zahl
+// Route to get books after matching author
+router.get('/:author', async (request, response) => {
+  try {
+    const { author } = request.params;
+
+    const book = await Book.findByAuthor(author);
+
+    return response.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+// Route to get book after matching pos farbe und zahl
 router.get('/:pos', async (request, response) => {
   try {
     const { pos } = request.params;
