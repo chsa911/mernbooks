@@ -6,7 +6,7 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import BooksTable from '../components/home/BooksTable';
-import Header from '../pages/Header';
+import Search from '../pages/Search';
 import BooksCard from '../components/home/BooksCard';
 import { IoIosSearch } from "react-icons/io";
 const Home = () => {

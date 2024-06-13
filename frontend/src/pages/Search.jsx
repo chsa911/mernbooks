@@ -1,9 +1,13 @@
 import { FaSearch } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import BackButton from '../components/BackButton';
+import Spinner from '../components/Spinner';
+import axios from 'axios';
+import { useSnackbar } from 'notistack';
 
-const Header = () => {
+const Search = () => {
   const { currentUser } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -82,4 +86,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Search;
