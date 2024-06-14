@@ -5,14 +5,30 @@ import { useEffect, useState } from "react";
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 import axios from 'axios';
+import {Provider} from 'react-redux';
 import { useSnackbar } from 'notistack';
 
-const Search = () => {
-  const { currentUser } = useSelector((state) => state.user);
+const SearchBook = () => {
+  const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+setLoading(true);
+    axios
+      .get('http://localhost:5555/books')
+                   .then(() => {
+                     setLoading(false);
+        enqueueSnackbar('Book found successfully', { variant: 'success' });
+        navigate('/');
+      })
+      .catch((error) => {
+        setLoading(false);
+        // alert('An error happened. Please Chack console');
+        enqueueSnackbar('Error', { variant: 'error' });
+        console.log(error);
+      });
+
+   const handleSubmit = (e) => {
 
     e.preventDefault();
     const urlParams = new URLSearchParams(window.location.search);
@@ -69,21 +85,10 @@ const Search = () => {
             </li>
           </Link>
 
-          <Link to="/profile">
-            {currentUser ? (
-              <img
-                src={currentUser.avatar}
-                alt="avatar"
-                className="rounded-full h-7 w-7 object-cover"
-              />
-            ) : (
-              <li className="text-slate-700 hover:underline">Sign In</li>
-            )}
-          </Link>
         </ul>
       </div>
     </header>
   );
 };
 
-export default Search;
+export default SearchBook;
